@@ -1,0 +1,7 @@
+{
+  "name": "neobank",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

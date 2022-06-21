@@ -1,0 +1,51 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar color="bank-green" mode="ios">
+    <ion-title class="ion-no-padding">Cards</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <section class="cards ion-padding">
+    <div class="circle-bg"></div>
+    <div class="neo-swiper-holder">
+      <swiper
+        [config]="config"
+        (slideChange)="onSlideChange($event)"
+        class="card-slider"
+      >
+        <ng-template swiperSlide *ngFor="let slide of cards">
+          <div class="bank-card">
+            <div class="bank-card_inner">
+              <img src="../../../assets/image/mastercard.png" />
+              <div class="card-details">
+                <p class="card-number">{{slide?.number}}</p>
+                <span class="card-name">{{slide?.name}}</span>
+              </div>
+              <span class="card-expire">{{slide?.expireAt}}</span>
+            </div>
+          </div>
+        </ng-template>
+      </swiper>
+    </div>
+  </section>
+  <section class="settings">
+    <ion-label class="list-title"> Settings </ion-label>
+
+    <ion-list lines="full" mode="ios">
+      <ion-item>
+        <ion-label class="settings-item" slot="start"> Disable Card </ion-label>
+        <ion-toggle slot="end" color="bank-green" checked="true"></ion-toggle>
+      </ion-item>
+      <ion-item>
+        <ion-label class="settings-item" slot="start">
+          Spending Limit
+        </ion-label>
+        <span slot="end"> $500 </span>
+      </ion-item>
+      <ion-item>
+        <ion-label class="settings-item" slot="start"> Change Pin </ion-label>
+        <span slot="end"> **** </span>
+      </ion-item>
+    </ion-list>
+  </section>
+</ion-content>

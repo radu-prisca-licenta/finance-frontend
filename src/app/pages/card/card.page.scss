@@ -1,0 +1,113 @@
+.cards {
+  background: var(--lo-green);
+  min-height: 20rem;
+  padding-top: 2.5rem;
+  padding-bottom: 5rem;
+}
+
+.circle-bg {
+  position: absolute;
+  width: 15.43rem;
+  height: 15.43rem;
+  left: -8rem;
+  top: 6rem;
+  border-radius: 50%;
+  background: rgba(117, 254, 172, 0.72);
+}
+
+.card-slider {
+  height: 18.12rem;
+}
+
+.bank-card_inner {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.bank-card {
+  height: 14.9rem;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(30px);
+  border-radius: 2.5rem;
+  position: relative;
+  padding: 1.5rem;
+  color: var(--white);
+  border: 2px solid rgba(127, 212, 168, 0.2);
+
+  .card-number {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0;
+  }
+
+  .card-details {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  .card-name {
+    margin-top: 0.3rem;
+    font-size: 1.1rem;
+    font-weight: 500;
+  }
+  .card-expire {
+    font-size: 1rem;
+    font-weight: 500;
+    align-self: start;
+  }
+
+  img {
+    align-self: start;
+    width: 4rem;
+    margin-left: -1rem;
+  }
+}
+
+.settings {
+  min-height: 20rem;
+  margin-top: -4rem;
+  z-index: 1;
+  background: var(--bg-hi);
+  border-radius: 3.12rem 3.12rem 0 0;
+  padding-top: 2rem;
+  padding-bottom: 4rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+
+  .list-title {
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: var(--text-green);
+    margin-bottom: 1rem;
+    display: block;
+  }
+
+  .settings-item {
+    font-size: 1.1rem;
+    color: var(--lo-green);
+    font-weight: 600;
+    margin-left: -1.3rem;
+  }
+
+  span {
+    font-size: 1rem;
+    color: var(--text-green);
+    font-weight: 600;
+  }
+
+  ion-list {
+    --ion-item-background: transparent;
+    ion-item {
+      --border-style: dashed;
+      --border-color: var(--mid-green);
+      --padding-bottom: 1rem;
+      --padding-top: 1rem;
+    }
+  }
+}

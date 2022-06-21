@@ -1,8 +1,8 @@
 {
-  "name": "neobank",
+  "name": "finance-licenta",
   "version": "0.0.1",
-  "author": "Simon Grimm",
-  "homepage": "https://ionicacademy.com/",
+  "author": "Radu Prisca",
+  "homepage": "https://radu.prisca.licenta.com/",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",

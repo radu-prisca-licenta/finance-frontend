@@ -14,17 +14,17 @@ export class CardPage implements OnInit {
   cards = [
     {
       number: '5200 8282 8282 8210',
-      name: 'Kal-El Amah',
+      name: 'Radu Prisca',
       expireAt: '05/27',
     },
     {
       number: '4242 4242 4242 4242',
-      name: 'Kal-El Amah',
+      name: 'Radu Prisca',
       expireAt: '01/25',
     },
     {
       number: '2223003122003222',
-      name: 'Kal-El Amah',
+      name: 'Radu Prisca',
       expireAt: '07/30',
     },
   ];

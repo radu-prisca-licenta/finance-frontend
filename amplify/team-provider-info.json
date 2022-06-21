@@ -10,6 +10,14 @@
       "StackName": "amplify-financefrontend-dev-130401",
       "StackId": "arn:aws:cloudformation:eu-central-1:420432763582:stack/amplify-financefrontend-dev-130401/7a984970-f149-11ec-bc3e-0a4f83280dda",
       "AmplifyAppId": "d2rai4ai1xv7ae"
+    },
+    "categories": {
+      "hosting": {
+        "amplifyhosting": {
+          "appId": "d2rai4ai1xv7ae",
+          "type": "manual"
+        }
+      }
     }
   }
 }

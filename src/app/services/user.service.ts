@@ -24,10 +24,10 @@ export class UserService {
   }
 
   update(user: User) {
-    return this.http.put(this.URL + '/' + user.userId, user);
+    return this.http.put(this.URL + '/' + user.userId, user).subscribe();
   }
 
   delete(id: string) {
-    return this.http.delete(this.URL + '/' + id);
+    return this.http.delete(this.URL + '/' + id).subscribe();
   }
 }

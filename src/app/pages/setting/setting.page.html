@@ -8,7 +8,7 @@
   <section>
     <div class="avatar">
       <img src="../../../assets/image/avatar-sm.jpg" />
-      <ion-label> Radu Prisca </ion-label>
+      <ion-label>{{user}} </ion-label>
     </div>
   </section>
   <section class="settings">
@@ -24,7 +24,7 @@
           Use Bio-Security
         </ion-label>
         <div slot="end" class="setting-right-item">
-          <ion-toggle color="bank-green" checked="true"></ion-toggle>
+          <ion-toggle color="bank-green" [(ngModel)]="userData.useBioSecurity"></ion-toggle>
         </div>
       </ion-item>
       <ion-item>
@@ -43,7 +43,7 @@
 
   <section class="ion-padding">
     <div>
-      <ion-button fill="clear" color="bank-green" strong="true">
+      <ion-button fill="clear" color="bank-green" strong="true" (click)="logout()">
         <ion-icon name="log-out-outline"></ion-icon>
         <ion-label>Logout</ion-label>
       </ion-button>

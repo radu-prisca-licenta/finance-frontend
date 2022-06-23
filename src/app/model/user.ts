@@ -1,6 +1,8 @@
 export interface User {
     userId: string;
     name: string;
-    pinCode: number;
-    password: string;
+    email: string;
+    phone: string;
+    useBioSecurity: boolean;
+    pinCodeEnabled: boolean;
 }

@@ -25,10 +25,10 @@ export class TransactionService {
     }
 
     update(transaction: Transaction) {
-        return this.http.put(this.URL + '/' + transaction.transactionId, transaction);
+        return this.http.put(this.URL + '/' + transaction.transactionId, transaction).subscribe();
     }
 
     delete(id: string) {
-        return this.http.delete(this.URL + '/' + id);
+        return this.http.delete(this.URL + '/' + id).subscribe();
     }
 }

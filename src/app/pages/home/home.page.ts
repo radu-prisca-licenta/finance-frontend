@@ -56,7 +56,7 @@ export class HomePage implements OnInit {
         },
     ];
 
-    transactions$;
+    transaction: Transaction = {amount: 0, currency: 'EUR', date: '', from: '', title: '', to: '', transactionId: '', type: 'credit'};
     username: string;
     password: string;
     user: string;
@@ -109,33 +109,15 @@ export class HomePage implements OnInit {
 
     private toggleSend() {
         this.isSendModalOpen = true;
-        const transaction: Transaction = {
-            amount: 100,
-            currency: 'USD',
-            date: formatDate(new Date(), 'yyyy-MM-dd', 'en'),
-            from: 'John',
-            title: 'Clothes',
-            to: 'Radu',
-            transactionId: '' + new Date().getTime(),
-            type: 'credit',
-
-        }
-        this.transactionService.create(transaction);
     }
 
-    private sendMoney() {
-        const transaction: Transaction = {
-            amount: 100,
-            currency: 'USD',
-            date: formatDate(new Date(), 'yyyy-MM-dd', 'en'),
-            from: 'John',
-            title: 'Clothes',
-            to: 'Radu',
-            transactionId: '' + new Date().getTime(),
-            type: 'credit',
-
-        }
-        this.transactionService.create(transaction);
+    sendMoney() {
+        this.transaction.from = this.user;
+        this.transaction.date = formatDate(new Date(), 'yyyy-MM-dd HH:mm', 'en'),
+        this.transactionService.create(this.transaction);
+        this.isSendModalOpen = false;
+        this.transaction = {amount: 0, currency: 'EUR', date: '', from: '', title: '', to: '', transactionId: '', type: 'credit'};
+        this.getTransactions();
     }
 
     private toggleTopUp() {
@@ -168,5 +150,9 @@ export class HomePage implements OnInit {
     logout() {
         localStorage.removeItem('user');
         location.reload();
+    }
+
+    setSendModalOpen(b: boolean) {
+        this.isSendModalOpen = b;
     }
 }

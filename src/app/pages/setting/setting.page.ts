@@ -40,7 +40,7 @@ export class SettingPage implements OnInit {
             this.userData = {
               userId: '',
               name: this.user,
-              email: 'user@finance.com',
+              email: this.user + '@finance.com',
               phone: '123456789',
               useBioSecurity: false,
               pinCodeEnabled: false

@@ -12,6 +12,7 @@ import {formatDate} from '@angular/common';
 export class HomePage implements OnInit {
 
     isModalOpen = false;
+    isSendModalOpen = false;
 
     config: SwiperOptions = {
         pagination: {clickable: true},
@@ -59,6 +60,7 @@ export class HomePage implements OnInit {
     username: string;
     password: string;
     user: string;
+    transactions: Transaction[];
 
     constructor(private transactionService: TransactionService) {
     }
@@ -106,6 +108,22 @@ export class HomePage implements OnInit {
     }
 
     private toggleSend() {
+        this.isSendModalOpen = true;
+        const transaction: Transaction = {
+            amount: 100,
+            currency: 'USD',
+            date: formatDate(new Date(), 'yyyy-MM-dd', 'en'),
+            from: 'John',
+            title: 'Clothes',
+            to: 'Radu',
+            transactionId: '' + new Date().getTime(),
+            type: 'credit',
+
+        }
+        this.transactionService.create(transaction);
+    }
+
+    private sendMoney() {
         const transaction: Transaction = {
             amount: 100,
             currency: 'USD',
@@ -129,7 +147,9 @@ export class HomePage implements OnInit {
     }
 
     private getTransactions() {
-        this.transactions$ = this.transactionService.getAll();
+        this.transactionService.getAll().subscribe(transactions => {
+            this.transactions = transactions.filter(transaction => transaction.from === this.user || transaction.to === this.user);
+        })
     }
 
 
